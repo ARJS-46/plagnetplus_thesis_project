@@ -1,9 +1,4 @@
 # Logbook
-
-Please Note: Logs for Meetings 1 & 2 had to be pushed in one go days after the meetings happened. This was due to the IRP Repo not yet being released.
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 Meeting 1 (Friday, 22 May 2026)
 
 Location: London (Meeting Online)
