@@ -17,24 +17,24 @@ Begin work on the Project plan with a focus this week on the literature review, 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Meeting 2 (Tuesday, 02 June 2025)
+Meeting 2 (Friday, 05 June 2025)
 
-Location: London (In-Person)
+Location: London (Meeting Online)
 
 Present in Meeting:
 Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor) 
 
 Key points discussed:
-...
+Discussed progress with the project plan, what sort of sources would be most beneficial to focus on (ones which apply SSL to image data even if they're not focusing on volcanology or related fields). Futhermore, discussed initial issues with using the CX3 cluster and arranging to meet with the RCDS in order to remedy this.
 
 Feedback received:
-...
+Continue to work on project plan.
 
 Work plan before next meeting:
-...
+Continue to work on a draft for the project plan to hand in on Tuesday the 8th ahead of the next scheduled meeting on the 9th.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Meeting 3 (Tuesday, 09 June 2025)
+Meeting 3 (Wednesday, 09 June 2025)
 
 Location: London (In-Person)
 
