@@ -17,7 +17,7 @@ Begin work on the Project plan with a focus this week on the literature review, 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Meeting 2 (Friday, 05 June 2025)
+Meeting 2 (Friday, 05 June 2026)
 
 Location: London (Meeting Online)
 
@@ -34,9 +34,26 @@ Work plan before next meeting:
 Continue to work on a draft for the project plan to hand in on Tuesday the 8th ahead of the next scheduled meeting on the 9th.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Meeting 3 (Wednesday, 09 June 2025)
+Meeting 3 (Wednesday, 10 June 2026)
 
 Location: London (In-Person)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor) 
+
+Key points discussed:
+Spent the session going over a draft of the project plan produced for the meeting.
+
+Feedback received:
+Project plan was received well with minor fixes suggested and some ideas on figures to improve the quality of the submission.
+
+Work plan before next meeting:
+Continue to work on project plan until the deadline on Friday 12 June (12 Noon) then switch to work on the PlagNet code. Begin with attempting to optimise the segmentation and pre-processing code for the volcanic plagioclase thin section images to improve overall data quality before moving on to training models. Also, make sure that all data can/has been segmented before - in the google drive it appears as though only the segmented plagioclase crystals for Aegina are present.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting 4 (Thursday, 18 June 2026)
+
+Location: London (Meeting Online)
 
 Present in Meeting:
 Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor) 
