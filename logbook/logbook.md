@@ -59,6 +59,40 @@ Present in Meeting:
 Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor) 
 
 Key points discussed:
+AS discussed progress with CN so far the prject plan has been completed, revised and submitted, and now preprocessing and segmentation code has been studied to discover areas that may be optimizable. Furthermore, a first attempt at producing a basic SimCLR model to compare against the SimSiam model has started to be developed. AS raised some issues with availability of some data in the google drive.
+
+Feedback received:
+CN will check with co-creator of PlagNet about the possibility of missing data in google drive.
+
+Work plan before next meeting:
+Continue developing models and start to produce draft section of final report regarding methods.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting 5 (Thursday, 25 June 2026)
+
+Location: London (Meeting Online)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor) 
+
+Key points discussed:
+...
+
+Feedback received:
+...
+
+Work plan before next meeting:
+...
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting 5 (Friday, 3 July 2026)
+
+Location: London (Meeting Online)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor), Alexis Peng (AP, PlagNet Co-Creator) 
+
+Key points discussed:
 ...
 
 Feedback received:
