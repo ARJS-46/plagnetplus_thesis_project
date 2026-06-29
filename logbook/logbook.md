@@ -76,13 +76,13 @@ Present in Meeting:
 Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor) 
 
 Key points discussed:
-...
+Discussed the training of the SimCLR model which is nearly complete. THe model has been coded and has trained first on a small batch as a test. 
 
 Feedback received:
-...
+Some feedback received on the project plan submission and minor areas were highlighted where things may be improved such as giving a more in-depth explanation of model choices for the project.
 
 Work plan before next meeting:
-...
+To continue with the development and training of new models. At a minimum train the SimCLR model sucessfully and begin to develop another model named in the project plan. Additionally, continue to draft sections of the final report that can be drafted at this time.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Meeting 5 (Friday, 3 July 2026)
