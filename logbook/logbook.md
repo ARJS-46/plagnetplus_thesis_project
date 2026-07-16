@@ -85,7 +85,32 @@ Work plan before next meeting:
 To continue with the development and training of new models. At a minimum train the SimCLR model sucessfully and begin to develop another model named in the project plan. Additionally, continue to draft sections of the final report that can be drafted at this time.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Meeting 5 (Friday, 3 July 2026)
+Meeting 6 (Friday, 3 July 2026)
+
+Location: London (Meeting Online)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor), Alexis Peng (AP, PlagNet Co-Creator) 
+
+Key points discussed:
+AP and As shared their respective work on the project. AP shared a new method for clustering the plagioclase images. AS shared progress with the SimCLR model and preliminary results/comparison to SimSiam.
+
+Feedback received:
+SimCLR results were received well.
+
+Work plan before next meeting:
+Continue to work on producing/implementing new models (DeepCluster, SWaV, DINO) whilst building a packaging framework which will speed up and streamline the process of running and evaluating each new model.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+NOTE ON INACTIVITY ISSUES FOR THE PERIOD BETWEEN 3rd July - 16 July: 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Meeting 7 (Monday, 20 July 2026) 
+
+NOTE: The reason there was no meeting between for a long period is due to supervisor CN being away on leave. A plan for work on the project was agreed upon between AS and CN before this break 
 
 Location: London (Meeting Online)
 
