@@ -17,7 +17,7 @@ Begin work on the Project plan with a focus this week on the literature review, 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-NOTE ON INACTIVITY ISSUE FROM ~5th JUNE: This is inactivity was due to a focus at this time on pure reading and research into the topics surrounding the project. At this time no code had been produced and little to no writing of the project plan had yet been produced so there was little reason to yet commit to the repository.
+NOTE ON INACTIVITY ISSUE FROM ~5th JUNE: This inactivity was due to a focus at this time on pure reading and research into the topics surrounding the project. At this time no code had been produced and little to no writing of the project plan had yet been produced so there was little reason to yet commit to the repository.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -107,7 +107,7 @@ Continue to work on producing/implementing new models (DeepCluster, SWaV, DINO) 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-NOTE ON INACTIVITY ISSUES FOR THE PERIOD BETWEEN 4th July - 16 July: A combination of Illness (flu - can provide medical note if ever needed) and an issue regarding logging into github (passkey wipe issue - now resolved) are the reason for the inactivity issues at these times. Work was still done during this time but at a reduced rate. Evidence of this work can be seen in the finished Aegina SimCLR analysis notebook updated just after this period.
+NOTE ON INACTIVITY ISSUES FOR THE PERIOD BETWEEN 4th July - 16 July: A combination of Illness (flu - can provide medical note if needed) and a later issue regarding github login (now resolved) are the reason for the inactivity issues at these times. Work was still done during this time but partially at a reduced rate due to illness. Evidence of this work can be seen in the finished Aegina SimCLR analysis notebook updated just after this period.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
