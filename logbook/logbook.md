@@ -122,10 +122,28 @@ Present in Meeting:
 Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor), Alexis Peng (AP, PlagNet Co-Creator) 
 
 Key points discussed:
-...
+AP discussed issues faced with segementation of certain samples with resorption textures and/or where very fine plagioclase is present. From inspecting problem images it seems segmentation may be having issues with certain atreas of extreme low and high brightness. AS discusse progress made on producing a unified, validated dataset for all given samples (Aegina, MtStHelens, Rumania, FCT, Methana) and the issues faced with producing a deepcluster model to compare with SimCLR and SimSiam Legacy. 
 
 Feedback received:
-...
+Keep going for now with deepcluster but it prooves toohard move onto the next viable model.
 
 Work plan before next meeting:
-...
+continue with work on deepcluster on aegina whilst attempting to make a start on one new model. Finalise combined dataset for training aegina-certified models on.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting 8 (Monday, 27 July 2026)
+
+Location: London (Meeting Online)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
+
+Key points discussed:
+--
+
+Feedback received:
+--
+
+Work plan before next meeting:
+--
