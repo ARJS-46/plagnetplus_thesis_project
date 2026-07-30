@@ -140,10 +140,10 @@ Present in Meeting:
 Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
 
 Key points discussed:
---
+discussed ways to move ahead with the 4 completed baseline models. gridsearch will be attempted despite large likely compute time. Clustering results were show to CN and it was suggested that AS investigates which clusters fall into which PCA spaces and that elbow plots are used to find optimal k values for each model. Furthermore the remainder of the project was planned and discussed. AS will also begin planning and drafting the discussion this week.
 
 Feedback received:
---
+see key points section.
 
 Work plan before next meeting:
---
+create elbow plots, explore were samples fall in PCA space, draft discussion, look into literature for optimisation methods.
