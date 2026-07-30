@@ -147,3 +147,21 @@ see key points section.
 
 Work plan before next meeting:
 create elbow plots, explore were samples fall in PCA space, draft discussion, look into literature for optimisation methods.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting 9 (Monday, 3 August 2026)
+
+Location: London (Meeting Online)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
+
+Key points discussed:
+-
+
+Feedback received:
+-
+
+Work plan before next meeting:
+-
