@@ -146,7 +146,7 @@ Feedback received:
 see key points section.
 
 Work plan before next meeting:
-create elbow plots, explore were samples fall in PCA space, draft discussion, look into literature for optimisation methods.
+create elbow plots, explore were samples fall in PCA space, draft discussion, look into literature for optimisation methods. In additon to this I should also look into other models/DINOv2.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
