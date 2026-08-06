@@ -164,4 +164,4 @@ Feedback received:
 The elbow plots and PCA extremes plots were received well. The main focus now is to push on with the project report. 
 
 Work plan before next meeting:
-Draft the first two sections of the final report (1.0 and 2.0) this includes introductory sections such as exisiting work and novel components of project and also the methodology. Furthermore, continue monitoring the progress of the gridsearch running on the hpc.
+Draft the first two sections of the final report (1.0 and 2.0) this includes introductory sections such as exisiting work and novel components of project and also the methodology. Furthermore, continue monitoring the progress of the gridsearch running on the hpc. Lastly, I will begin planning and building the package to hold all of the work produced so far.
