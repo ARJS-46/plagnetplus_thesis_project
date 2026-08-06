@@ -158,10 +158,10 @@ Present in Meeting:
 Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
 
 Key points discussed:
--
+Discussed progress with Gridsearch. Two grdisearches for the best performing models on the unified dataset (simsiam + swav) are being run. However progress is slow as the hpc is extremely busy and the queue is taking days to clear. so far about 1/4 of the gridsearch for these models is complete. The written report was also discussed and the writing and structure for the methodology and discussion were discussed in detail. Finally some model comparison plots showing extreme sample examples in PCA space and elbow plots for each model and the resultant improved clusters were shared.
 
 Feedback received:
--
+The elbow plots and PCA extremes plots were received well. The main focus now is to push on with the project report. 
 
 Work plan before next meeting:
--
+Draft the first two sections of the final report (1.0 and 2.0) this includes introductory sections such as exisiting work and novel components of project and also the methodology. Furthermore, continue monitoring the progress of the gridsearch running on the hpc.
