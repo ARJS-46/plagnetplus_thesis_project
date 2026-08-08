@@ -1,8 +1,6 @@
 # PlagNetPlus
 
-PlagNetPlus is the codebase developed for an MSc Individual Research Project
-investigating self-supervised representation learning for cathodoluminescence
-images of plagioclase crystals.
+PlagNetPlus is the codebase developed for an Individual Research Project as part of an Msc in Geo-Energy and Machine Learning and Data Science investigating self-supervised representation learning for cold cathodoluminescence images of volcanogenic plagioclase crystals.
 
 The project compares four self-supervised learning methods:
 
