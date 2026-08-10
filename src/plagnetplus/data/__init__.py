@@ -15,4 +15,13 @@ __all__ = [
     "locality_sampling_weights",
     "read_manifest",
     "validate_manifest",
+    "ALLOWED_BENCHMARK_SPLITS",
+    "assert_valid_benchmark_manifest",
+    "validate_benchmark_manifest",
 ]
+
+from .split_validation import (
+    ALLOWED_BENCHMARK_SPLITS,
+    assert_valid_benchmark_manifest,
+    validate_benchmark_manifest,
+)
