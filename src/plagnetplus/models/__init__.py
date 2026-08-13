@@ -13,6 +13,13 @@ from plagnetplus.models.simclr import (
     SimCLRModel,
     nt_xent_loss,
 )
+from plagnetplus.models.simsiam import (
+    SimSiamModel,
+    SimSiamPredictionHead,
+    SimSiamProjectionHead,
+    negative_cosine_similarity,
+    symmetric_negative_cosine_loss,
+)
 
 
 __all__ = [
@@ -22,7 +29,12 @@ __all__ = [
     "ProjectionHead",
     "RepresentationModel",
     "SimCLRModel",
+    "SimSiamModel",
+    "SimSiamPredictionHead",
+    "SimSiamProjectionHead",
     "build_backbone",
+    "negative_cosine_similarity",
     "normalise_backbone_name",
     "nt_xent_loss",
+    "symmetric_negative_cosine_loss",
 ]

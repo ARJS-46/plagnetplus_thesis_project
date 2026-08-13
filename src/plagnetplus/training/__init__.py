@@ -17,17 +17,29 @@ from plagnetplus.training.simclr_engine import (
     train_one_epoch,
     write_history_csv_atomic,
 )
+from plagnetplus.training.simsiam_config import (
+    SimSiamTrainingConfig,
+    load_simsiam_training_config,
+)
+from plagnetplus.training.simsiam_engine import (
+    SimSiamEpochMetrics,
+    build_simsiam_optimizer,
+)
 
 
 __all__ = [
     "EpochMetrics",
     "SimCLRTrainingConfig",
+    "SimSiamEpochMetrics",
+    "SimSiamTrainingConfig",
+    "build_simsiam_optimizer",
     "capture_rng_state",
     "config_from_mapping",
     "evaluate_contrastive_epoch",
     "learning_rate_for_epoch",
     "load_checkpoint",
     "load_simclr_training_config",
+    "load_simsiam_training_config",
     "restore_rng_state",
     "save_checkpoint_atomic",
     "set_optimizer_learning_rate",
