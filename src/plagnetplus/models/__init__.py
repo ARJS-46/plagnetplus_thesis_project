@@ -7,6 +7,7 @@ from plagnetplus.models.backbones import (
     normalise_backbone_name,
 )
 from plagnetplus.models.base import RepresentationModel
+from plagnetplus.models.deepcluster import DeepClusterModel
 from plagnetplus.models.simclr import (
     ProjectionHead,
     SimCLRModel,
@@ -17,6 +18,7 @@ from plagnetplus.models.simclr import (
 __all__ = [
     "BackboneBuild",
     "BackboneName",
+    "DeepClusterModel",
     "ProjectionHead",
     "RepresentationModel",
     "SimCLRModel",
