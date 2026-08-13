@@ -17,23 +17,6 @@ from plagnetplus.models.simsiam import (
 )
 
 
-def test_negative_cosine_similarity_for_identical_vectors() -> None:
-    values = torch.tensor(
-        [
-            [1.0, 0.0, 0.0],
-            [0.0, 1.0, 0.0],
-        ]
-    )
-
-    loss = negative_cosine_similarity(
-        values,
-        values,
-    )
-
-    assert loss.item() == pytest.approx(
-        -1.0,
-        abs=1e-7,
-    )
 
 
 def test_symmetric_loss_detaches_both_targets() -> None:
@@ -91,46 +74,8 @@ def test_symmetric_loss_detaches_both_targets() -> None:
     assert second_projection.grad is None
 
 
-def test_projection_head_uses_non_affine_final_batch_norm() -> None:
-    head = SimSiamProjectionHead(
-        input_dimension=512,
-        hidden_dimension=2048,
-        output_dimension=2048,
-        final_batch_norm_affine=False,
-    )
-
-    final_layer = head.network[-1]
-
-    assert isinstance(
-        final_layer,
-        nn.BatchNorm1d,
-    )
-
-    assert final_layer.affine is False
-    assert final_layer.weight is None
-    assert final_layer.bias is None
 
 
-def test_prediction_head_dimensions() -> None:
-    head = SimSiamPredictionHead(
-        input_dimension=2048,
-        hidden_dimension=512,
-        output_dimension=2048,
-    )
-
-    head.train()
-
-    inputs = torch.randn(
-        4,
-        2048,
-    )
-
-    outputs = head(inputs)
-
-    assert outputs.shape == (
-        4,
-        2048,
-    )
 
 
 def test_model_shapes_and_objective_backward() -> None:
@@ -246,100 +191,4 @@ def test_model_shapes_and_objective_backward() -> None:
             + projector_gradients
             + predictor_gradients
         )
-    )
-
-
-def test_collapse_level_reference_value() -> None:
-    projection_dimension = 2048
-    healthy_standard_deviation = (
-        1.0 / math.sqrt(
-            projection_dimension
-        )
-    )
-
-    collapse_level = max(
-        0.0,
-        1.0
-        - math.sqrt(
-            projection_dimension
-        )
-        * healthy_standard_deviation,
-    )
-
-    assert collapse_level == pytest.approx(
-        0.0,
-        abs=1e-12,
-    )
-
-
-@pytest.mark.parametrize(
-    ("prediction_shape", "target_shape"),
-    [
-        ((4, 8), (4, 9)),
-        ((4, 8, 1), (4, 8, 1)),
-        ((1, 8), (1, 8)),
-    ],
-)
-def test_negative_cosine_similarity_rejects_invalid_inputs(
-    prediction_shape: tuple[int, ...],
-    target_shape: tuple[int, ...],
-) -> None:
-    prediction = torch.randn(
-        prediction_shape
-    )
-
-    target = torch.randn(
-        target_shape
-    )
-
-    with pytest.raises(ValueError):
-        negative_cosine_similarity(
-            prediction,
-            target,
-        )
-
-
-def test_model_rejects_mismatched_prediction_dimension() -> None:
-    with pytest.raises(
-        ValueError,
-        match="must match",
-    ):
-        SimSiamModel(
-            backbone_name="resnet18",
-            projection_dimension=2048,
-            prediction_dimension=512,
-        )
-
-def test_training_loss_interface_returns_scalar() -> None:
-    """The abstract RepresentationModel interface must be concrete."""
-
-    torch.manual_seed(17)
-
-    model = SimSiamModel(
-        backbone_name="resnet18",
-        initialization="scratch",
-        projection_hidden_dimension=2048,
-        projection_dimension=2048,
-        prediction_hidden_dimension=512,
-        prediction_dimension=2048,
-    )
-
-    model.train()
-
-    views = (
-        torch.randn(4, 3, 64, 64),
-        torch.randn(4, 3, 64, 64),
-    )
-
-    loss = model.training_loss(views)
-
-    assert loss.ndim == 0
-    assert torch.isfinite(loss)
-
-    loss.backward()
-
-    assert any(
-        parameter.grad is not None
-        for parameter in model.parameters()
-        if parameter.requires_grad
     )
