@@ -165,3 +165,39 @@ The elbow plots and PCA extremes plots were received well. The main focus now is
 
 Work plan before next meeting:
 Draft the first two sections of the final report (1.0 and 2.0) this includes introductory sections such as exisiting work and novel components of project and also the methodology. Furthermore, continue monitoring the progress of the gridsearch running on the hpc. Lastly, I will begin planning and building the package to hold all of the work produced so far.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting 10 (Monday, 10 August 2026)
+
+Location: London (Meeting Online)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
+
+Key points discussed:
+Discussed delay in gridsearch progress due to large (over 1000 long) queue on HPC. Discussed best ways to format and organise project report and the best plots to include in the report as figures.
+
+Feedback received:
+Continue to work on the report writing.
+
+Work plan before next meeting:
+Draft a near-complete version of the project report for CN to read and give feedback on early. Look into what other models/gridsearches can be run. Run simsiam and swav models optimised after gridsearch? Run gridsearch for the other two less well-performing models for balance?
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting 11 (Monday, 17 August 2026)
+
+Location: London (Meeting Online)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
+
+Key points discussed:
+-
+
+Feedback received:
+-
+
+Work plan before next meeting:
+-
