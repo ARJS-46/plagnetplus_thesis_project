@@ -194,10 +194,28 @@ Present in Meeting:
 Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
 
 Key points discussed:
--
+Most of what was discussed was related to the writing and editing of sections 1 and 2 of the final report which have now been fully drafted. Ideas for figures like dataset tables and model diagrams were discussed and also CN reformatting the structure of the report to more closely follow the template of a scientific paper. At the moment the paper is more broken up into small, highly-specific sections. The gridsearch results were finally finished and discussed runs s10 for simsiam and w04 and w05 for SwAV were the most promising. Howeverm s10 (and other simsiam runs) increased their risk of collapse whereas the SwAV runs appeared to mildly increase their metrics whilst remaining stable. A 100, 250, and 500 epoch run of the three best models (s10, w04, w05) are being run in order to improve results by running the most optimal setups found by gridsearch for a longer period of time.
 
 Feedback received:
--
+Draft is good so far just need to conntinue pushing forward with the work before as the deadline is now approaching.
 
 Work plan before next meeting:
--
+complete a full draft of the report to allow feddback from CN, run and analyse the optimised models (s10, w04, w05) and package up the exisiting code ina reproducible manner before the final submission.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting 11 (Tuesday, 25 August 2026)
+
+Location: London (Meeting Online)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
+
+Key points discussed:
+--
+
+Feedback received:
+--
+
+Work plan before next meeting:
+--
