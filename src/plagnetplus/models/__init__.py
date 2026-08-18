@@ -22,6 +22,13 @@ from plagnetplus.models.simsiam import (
 )
 
 
+from plagnetplus.models.swav import (
+    SwAVModel,
+    SwAVProjectionHead,
+    sinkhorn_knopp,
+    swapped_prediction_loss,
+)
+
 __all__ = [
     "BackboneBuild",
     "BackboneName",
@@ -37,4 +44,8 @@ __all__ = [
     "normalise_backbone_name",
     "nt_xent_loss",
     "symmetric_negative_cosine_loss",
+    "SwAVModel",
+    "SwAVProjectionHead",
+    "sinkhorn_knopp",
+    "swapped_prediction_loss",
 ]

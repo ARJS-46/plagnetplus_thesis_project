@@ -27,6 +27,15 @@ from plagnetplus.training.simsiam_engine import (
 )
 
 
+from plagnetplus.training.swav_config import (
+    SwAVTrainingConfig,
+    load_swav_training_config,
+)
+from plagnetplus.training.swav_engine import (
+    SwAVEpochMetrics,
+    build_swav_optimizer,
+)
+
 __all__ = [
     "EpochMetrics",
     "SimCLRTrainingConfig",
@@ -45,4 +54,8 @@ __all__ = [
     "set_optimizer_learning_rate",
     "train_one_epoch",
     "write_history_csv_atomic",
+    "SwAVTrainingConfig",
+    "load_swav_training_config",
+    "SwAVEpochMetrics",
+    "build_swav_optimizer",
 ]

@@ -1,0 +1,180 @@
+#!/bin/bash
+#PBS -N pnp_long_e100
+#PBS -J 1-3%3
+#PBS -l select=1:ncpus=8:mem=64gb:ngpus=1:gpu_type=L40S
+#PBS -l walltime=12:00:00
+#PBS -j oe
+
+set -euo pipefail
+
+module load miniforge/3
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
+conda activate plagnet-simclr
+
+: "${TMPDIR:?PBS TMPDIR is not set}"
+: "${PBS_JOBID:?PBS_JOBID is not set}"
+: "${PBS_ARRAY_INDEX:?PBS_ARRAY_INDEX is not set}"
+
+HPC_ROOT="/rds/general/user/ars223/home/IRP26"
+
+INPUT_ROOT="${HPC_ROOT}/inputs/simsiam_swav_long_selected_v1"
+DATA_INPUT_ROOT="${HPC_ROOT}/inputs/simclr_resnet18_pooled_v1"
+
+CODE_BUNDLE="${INPUT_ROOT}/plagnetplus_simsiam_swav_long_selected_v1.tar.gz"
+
+AEGINA_ARCHIVE="${DATA_INPUT_ROOT}/data_ssl_aegina_compat_v1.tar"
+NON_AEGINA_ARCHIVE="${DATA_INPUT_ROOT}/data_ssl_non_aegina_v1.tar"
+UNIFIED_ARCHIVE="${DATA_INPUT_ROOT}/data_ssl_unified_v1.tar"
+
+STAGE_ROOT="${TMPDIR}/IRP26"
+WORK_ROOT="${STAGE_ROOT}/plagnetplus-dev"
+DATA_ROOT="${STAGE_ROOT}/data"
+
+PYTHON="${HOME}/miniforge3/envs/plagnet-simclr/bin/python"
+
+ARRAY_INDEX="${PBS_ARRAY_INDEX}"
+
+if ! [[ "${ARRAY_INDEX}" =~ ^[0-9]+$ ]]; then
+    echo "FAIL: PBS_ARRAY_INDEX is not an integer."
+    exit 1
+fi
+
+if (( ARRAY_INDEX < 1 || ARRAY_INDEX > 3 )); then
+    echo "FAIL: array index must lie in 1..3."
+    exit 1
+fi
+
+export PNP_DATA_ROOT="${DATA_ROOT}"
+export PNP_RUNS_ROOT="${HPC_ROOT}/runs"
+
+export PNP_GRID_STATUS_ROOT="${HPC_ROOT}/runs/hpc/long_runs/simsiam_swav_selected_v1/status_e100"
+
+export PYTHONPATH="${WORK_ROOT}/src"
+export PYTHONUNBUFFERED=1
+
+export OMP_NUM_THREADS=8
+export MKL_NUM_THREADS=8
+export OPENBLAS_NUM_THREADS=8
+
+echo
+echo "========== SELECTED SSL LONG RUN =========="
+echo "Epoch cohort: 100"
+echo "PBS job ID: ${PBS_JOBID}"
+echo "PBS array index: ${ARRAY_INDEX}"
+echo "Host: $(hostname)"
+echo "Started UTC: $(date -u --iso-8601=seconds)"
+
+for REQUIRED in \
+    "${PYTHON}" \
+    "${CODE_BUNDLE}" \
+    "${AEGINA_ARCHIVE}" \
+    "${NON_AEGINA_ARCHIVE}" \
+    "${UNIFIED_ARCHIVE}"
+do
+    test -f "${REQUIRED}" || {
+        echo "FAIL: missing ${REQUIRED}"
+        exit 1
+    }
+done
+
+echo
+echo "----- Verify deployment bundle -----"
+
+cd "${INPUT_ROOT}"
+sha256sum -c SHA256SUMS
+
+echo
+echo "----- Prepare node-local stage -----"
+
+rm -rf "${STAGE_ROOT}"
+
+mkdir -p \
+    "${WORK_ROOT}" \
+    "${DATA_ROOT}" \
+    "${HPC_ROOT}/runs/hpc/long_runs/simsiam_swav_selected_v1" \
+    "${PNP_GRID_STATUS_ROOT}"
+
+echo
+echo "----- Extract code bundle -----"
+
+time tar -xzf \
+    "${CODE_BUNDLE}" \
+    -C "${WORK_ROOT}"
+
+echo
+echo "----- Extract frozen dataset -----"
+
+time tar -xf \
+    "${AEGINA_ARCHIVE}" \
+    -C "${DATA_ROOT}"
+
+time tar -xf \
+    "${NON_AEGINA_ARCHIVE}" \
+    -C "${DATA_ROOT}"
+
+time tar -xf \
+    "${UNIFIED_ARCHIVE}" \
+    -C "${DATA_ROOT}"
+
+RUNNER="${WORK_ROOT}/tools/training/run_simsiam_swav_grid_trial.py"
+
+MANIFEST="${WORK_ROOT}/configs/long_runs/simsiam_swav_selected_v1/manifest_e100.csv"
+
+for REQUIRED in \
+    "${RUNNER}" \
+    "${MANIFEST}" \
+    "${WORK_ROOT}/tools/training/train_simsiam.py" \
+    "${WORK_ROOT}/tools/training/train_swav.py"
+do
+    test -f "${REQUIRED}" || {
+        echo "FAIL: staged file missing: ${REQUIRED}"
+        exit 1
+    }
+done
+
+echo
+echo "----- Compile staged training code -----"
+
+"${PYTHON}" -m py_compile \
+    "${RUNNER}" \
+    "${WORK_ROOT}/tools/training/train_simsiam.py" \
+    "${WORK_ROOT}/tools/training/train_swav.py"
+
+echo "STAGED PYTHON SYNTAX: PASS"
+
+echo
+echo "----- GPU preflight -----"
+
+nvidia-smi
+
+"${PYTHON}" - <<'INNERPY'
+import torch
+
+from plagnetplus.models import (
+    SimSiamModel,
+    SwAVModel,
+)
+
+print("torch =", torch.__version__)
+print("cuda_available =", torch.cuda.is_available())
+
+if not torch.cuda.is_available():
+    raise SystemExit("FAIL: CUDA unavailable.")
+
+print("GPU =", torch.cuda.get_device_name(0))
+print("MODEL IMPORTS: PASS")
+INNERPY
+
+echo
+echo "----- Execute long-run trial -----"
+
+cd "${WORK_ROOT}"
+
+"${PYTHON}" "${RUNNER}" \
+    --project-root "${WORK_ROOT}" \
+    --manifest "${MANIFEST}" \
+    --array-index "${ARRAY_INDEX}"
+
+echo
+echo "Finished UTC: $(date -u --iso-8601=seconds)"
+echo "========== LONG RUN COMPLETE =========="

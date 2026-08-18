@@ -1,0 +1,69 @@
+{
+  "data": {
+    "benchmark_id": "pooled_broad_p80_10_10_v1",
+    "expected_manifest_fingerprint_sha256": "a2814f1c33b5adc45e9d4c8c90c7af7577e237ca74d112473a274dbd949ab582",
+    "expected_test_rows": 16988,
+    "expected_train_rows": 101682,
+    "expected_validation_rows": 14919,
+    "image_root_map": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/metadata/image_root_map.json",
+    "limit_train_items": null,
+    "limit_validation_items": null,
+    "sampling": "natural_frequency",
+    "test_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/manifests/crystals_test.csv",
+    "train_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/manifests/crystals_train.csv",
+    "transform_config": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/metadata/normalization_v1/ssl_transform_config_v1.json",
+    "validation_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/manifests/crystals_validation.csv",
+    "verify_files": "sample",
+    "verify_sample_size": 2048
+  },
+  "model": {
+    "backbone": "resnet18",
+    "global_crops": 2,
+    "initialization": "scratch",
+    "local_crops": 0,
+    "method": "swav",
+    "projection_dimension": 128,
+    "projection_hidden_dimension": 2048,
+    "prototype_count": 250,
+    "queue_length": 0,
+    "sinkhorn_epsilon": 0.05,
+    "sinkhorn_iterations": 3,
+    "temperature": 0.1
+  },
+  "monitoring": {
+    "require_finite_gradients": true,
+    "require_finite_loss": true,
+    "track_assignment_agreement": true,
+    "track_assignment_entropy": true,
+    "track_backbone_feature_norm": true,
+    "track_projection_norm": true,
+    "track_prototype_occupancy": true,
+    "track_prototype_weight_norm": true
+  },
+  "optimization": {
+    "batch_size": 256,
+    "epochs": 30,
+    "evaluation_batch_size": 256,
+    "gradient_clip_norm": 5.0,
+    "learning_rate": 0.15,
+    "minimum_learning_rate": 0.0,
+    "momentum": 0.9,
+    "optimizer": "sgd",
+    "prototype_freeze_epochs": 1,
+    "warmup_epochs": 3,
+    "weight_decay": 1e-06
+  },
+  "run": {
+    "name": "swav_w04_lr0p15_p250_t0p1_eps0p05_e30_seed42",
+    "output_root": "${PNP_RUNS_ROOT}/hpc/grid_search/swav_screen_v2"
+  },
+  "runtime": {
+    "checkpoint_every": 10,
+    "export_train_embeddings": true,
+    "export_validation_embeddings": true,
+    "num_workers": 8,
+    "seed": 42,
+    "use_amp": false,
+    "validation_every": 1
+  }
+}
