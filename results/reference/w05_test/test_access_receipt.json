@@ -1,0 +1,17 @@
+{
+  "checkpoint_sha256": "025388f60f21409cffc48d39f9c4d3053f696b3a4d9ca6ad4567a41ad31d09da",
+  "completed_utc": "2026-08-24T15:58:04.657963+00:00",
+  "config_sha256": "50979fbf40f716978f15ff8ee27e42ce0d6e8237b47b11e5d2a67f0892ed45d2",
+  "deterministic_preprocessing": true,
+  "run_name": "swav_w05_lr0p3_p250_t0p1_eps0p05_e100_seed42_v2",
+  "schema_version": "plagnetplus_w05_test_access_receipt_v1",
+  "test_access_purpose": "single frozen final evaluation",
+  "test_embedding_path": "${PNP_RUNS_ROOT}/hpc/v2/selected/swav_w05_lr0p3_p250_t0p1_eps0p05_e100_seed42_v2/embeddings/test_backbone_embeddings.npz",
+  "test_embedding_sha256": "3dbb4d81ef53cce9f1c3f41042d0cef30546396ffa324289cb6ffeedca4cc4f4",
+  "test_embedding_shape": [
+    16988,
+    512
+  ],
+  "test_images_accessed": true,
+  "training_performed": false
+}

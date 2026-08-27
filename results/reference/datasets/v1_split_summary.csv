@@ -1,0 +1,4 @@
+_split,rows,volcanoes,unique_image_references
+test,16988,5,16988
+train,101682,5,101682
+validation,14919,4,14919

@@ -1,0 +1,6 @@
+,predicted::Aegina,predicted::FCT,predicted::Methana,predicted::MtStHelens,predicted::Rumania
+true::Aegina,301,7,40,490,403
+true::FCT,493,677,499,8,696
+true::Methana,1767,235,1899,2079,1313
+true::MtStHelens,2,23,5,54,0
+true::Rumania,569,131,392,116,4789

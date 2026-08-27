@@ -1,0 +1,26 @@
+{
+  "benchmark_id": "pooled_broad_p80_10_10_v2",
+  "checkpoint_path": "${PNP_RUNS_ROOT}/hpc/v2/selected/swav_w05_lr0p3_p250_t0p1_eps0p05_e100_seed42_v2/checkpoints/swav_last.pt",
+  "checkpoint_sha256": "025388f60f21409cffc48d39f9c4d3053f696b3a4d9ca6ad4567a41ad31d09da",
+  "cluster_count": 50,
+  "cluster_seeds": [
+    42,
+    43,
+    44
+  ],
+  "completed_epochs": 100,
+  "config_path": "configs/v2_selected/swav_w05_e100_v2.json",
+  "config_sha256": "50979fbf40f716978f15ff8ee27e42ce0d6e8237b47b11e5d2a67f0892ed45d2",
+  "frozen_utc": "2026-08-24T15:43:01.153935+00:00",
+  "location_probe_class_weight": "balanced",
+  "location_probe_regularisation_c": 1.0,
+  "manifest_fingerprint_sha256": "c3c028a9aef47cd618ebceaa66ba7444f2b92a696abba6e509db2d468f440e7f",
+  "model_selection": "SwAV W05 v2",
+  "pca_components": 50,
+  "retrieval_k": 10,
+  "run_name": "swav_w05_lr0p3_p250_t0p1_eps0p05_e100_seed42_v2",
+  "schema_version": "plagnetplus_w05_final_test_contract_v1",
+  "silhouette_sample_size": 5000,
+  "test_results_may_change_selection": false,
+  "training_performed": false
+}
