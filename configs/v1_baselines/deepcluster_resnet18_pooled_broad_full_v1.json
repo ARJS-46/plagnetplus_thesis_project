@@ -1,0 +1,62 @@
+{
+  "run_name": "deepcluster_resnet18_pooled_broad_natural_seed42_full",
+  "benchmark_id": "pooled_broad_p80_10_10_v1",
+  "sampling": "natural_frequency",
+
+  "backbone_name": "resnet18",
+  "initialization": "scratch",
+
+  "train_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/manifests/crystals_train.csv",
+  "validation_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/manifests/crystals_validation.csv",
+  "test_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/manifests/crystals_test.csv",
+  "image_root_map": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/metadata/image_root_map.json",
+  "transform_config": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/metadata/normalization_v1/ssl_transform_config_v1.json",
+  "output_root": "${PNP_RUNS_ROOT}/hpc/deepcluster",
+
+  "expected_train_rows": 101682,
+  "expected_validation_rows": 14919,
+  "expected_test_rows": 16988,
+
+  "cycles": 50,
+  "cluster_count": 500,
+  "pca_components": 128,
+  "epochs_per_cycle": 1,
+
+  "pca_whiten": true,
+  "pca_solver": "randomized",
+
+  "kmeans_algorithm": "lloyd",
+  "kmeans_initialization": "k-means++",
+  "kmeans_n_init": 1,
+  "kmeans_maximum_iterations": 100,
+  "kmeans_tolerance": 0.0001,
+
+  "batch_size": 256,
+  "evaluation_batch_size": 256,
+  "num_workers": 8,
+
+  "learning_rate": 0.03,
+  "minimum_learning_rate": 0.0003,
+  "momentum": 0.9,
+  "weight_decay": 0.0001,
+  "warmup_cycles": 5,
+  "gradient_clip_norm": 5.0,
+
+  "samples_per_epoch": 101682,
+  "inverse_cluster_frequency_sampling": true,
+  "classifier_reset_each_cycle": true,
+
+  "checkpoint_every": 5,
+
+  "seed": 42,
+  "device": "cuda",
+  "use_amp": true,
+
+  "verify_files": "sample",
+  "verify_sample_size": 2048,
+
+  "required_occupied_cluster_fraction": 1.0,
+  "minimum_normalised_cluster_entropy": 0.75,
+  "maximum_largest_cluster_fraction": 0.20,
+  "minimum_cluster_size_warning": 10
+}

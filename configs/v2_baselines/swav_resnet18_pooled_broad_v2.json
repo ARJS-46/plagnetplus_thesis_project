@@ -1,0 +1,69 @@
+{
+  "run": {
+    "name": "swav_resnet18_pooled_broad_natural_seed42_v2",
+    "output_root": "${PNP_RUNS_ROOT}/hpc/v2/baselines/swav"
+  },
+  "model": {
+    "method": "swav",
+    "backbone": "resnet18",
+    "initialization": "scratch",
+    "projection_hidden_dimension": 2048,
+    "projection_dimension": 128,
+    "prototype_count": 500,
+    "temperature": 0.1,
+    "sinkhorn_epsilon": 0.05,
+    "sinkhorn_iterations": 3,
+    "global_crops": 2,
+    "local_crops": 0,
+    "queue_length": 0
+  },
+  "data": {
+    "benchmark_id": "pooled_broad_p80_10_10_v2",
+    "sampling": "natural_frequency",
+    "train_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v2/benchmarks/pooled_broad_p80_10_10_v2/manifests/crystals_train.csv",
+    "validation_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v2/benchmarks/pooled_broad_p80_10_10_v2/manifests/crystals_validation.csv",
+    "test_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v2/benchmarks/pooled_broad_p80_10_10_v2/manifests/crystals_test.csv",
+    "image_root_map": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v2/metadata/image_root_map.json",
+    "transform_config": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v2/benchmarks/pooled_broad_p80_10_10_v2/metadata/normalization_v2/ssl_transform_config_v2.json",
+    "expected_manifest_fingerprint_sha256": "c3c028a9aef47cd618ebceaa66ba7444f2b92a696abba6e509db2d468f440e7f",
+    "expected_train_rows": 91357,
+    "expected_validation_rows": 14919,
+    "expected_test_rows": 16988,
+    "limit_train_items": null,
+    "limit_validation_items": null,
+    "verify_files": "sample",
+    "verify_sample_size": 2048
+  },
+  "optimization": {
+    "epochs": 100,
+    "batch_size": 256,
+    "evaluation_batch_size": 256,
+    "optimizer": "sgd",
+    "learning_rate": 0.3,
+    "minimum_learning_rate": 0.0,
+    "momentum": 0.9,
+    "weight_decay": 1e-06,
+    "warmup_epochs": 10,
+    "gradient_clip_norm": 5.0,
+    "prototype_freeze_epochs": 1
+  },
+  "runtime": {
+    "num_workers": 8,
+    "checkpoint_every": 10,
+    "validation_every": 1,
+    "seed": 42,
+    "use_amp": false,
+    "export_train_embeddings": true,
+    "export_validation_embeddings": true
+  },
+  "monitoring": {
+    "track_assignment_entropy": true,
+    "track_prototype_occupancy": true,
+    "track_assignment_agreement": true,
+    "track_backbone_feature_norm": true,
+    "track_projection_norm": true,
+    "track_prototype_weight_norm": true,
+    "require_finite_loss": true,
+    "require_finite_gradients": true
+  }
+}

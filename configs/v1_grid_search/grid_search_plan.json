@@ -1,0 +1,64 @@
+{
+  "array_range": {
+    "first": 1,
+    "last": 24,
+    "maximum_concurrent": 4
+  },
+  "created_utc": "2026-08-04T11:14:43.048130+00:00",
+  "grid_id": "simsiam_swav_screen_v2",
+  "revision_from_v1": {
+    "added_dimension": {
+      "learning_rate": [
+        0.15,
+        0.3,
+        0.6
+      ]
+    },
+    "reason": "Prioritise SwAV learning-rate sensitivity over a second Sinkhorn-epsilon value while retaining 12 SwAV trials.",
+    "removed_dimension": {
+      "sinkhorn_epsilon": [
+        0.03,
+        0.05
+      ]
+    }
+  },
+  "schema_version": "plagnetplus_simsiam_swav_grid_search_plan_v2",
+  "screening_contract": {
+    "epochs": 30,
+    "seed": 42,
+    "test_embeddings_permitted": false,
+    "test_images_permitted": false,
+    "use_amp": false
+  },
+  "simsiam": {
+    "baseline_array_index": 8,
+    "status": "unchanged_from_v1",
+    "trial_count": 12
+  },
+  "swav": {
+    "baseline_array_index": 23,
+    "fixed": {
+      "global_crops": 2,
+      "local_crops": 0,
+      "queue_length": 0,
+      "sinkhorn_iterations": 3,
+      "weight_decay": 1e-06
+    },
+    "learning_rates": [
+      0.15,
+      0.3,
+      0.6
+    ],
+    "prototype_counts": [
+      250,
+      500
+    ],
+    "sinkhorn_epsilon": 0.05,
+    "temperatures": [
+      0.05,
+      0.1
+    ],
+    "trial_count": 12
+  },
+  "total_trials": 24
+}

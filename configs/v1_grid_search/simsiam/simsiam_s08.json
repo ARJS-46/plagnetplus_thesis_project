@@ -1,0 +1,66 @@
+{
+  "data": {
+    "benchmark_id": "pooled_broad_p80_10_10_v1",
+    "expected_test_rows": 16988,
+    "expected_train_rows": 101682,
+    "expected_validation_rows": 14919,
+    "image_root_map": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/metadata/image_root_map.json",
+    "limit_train_items": null,
+    "limit_validation_items": null,
+    "sampling": "natural_frequency",
+    "test_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/manifests/crystals_test.csv",
+    "train_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/manifests/crystals_train.csv",
+    "transform_config": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/metadata/normalization_v1/ssl_transform_config_v1.json",
+    "validation_manifest": "${PNP_DATA_ROOT}/processed/plagnetplus/ssl_unified_v1/benchmarks/pooled_broad_p80_10_10_v1/manifests/crystals_validation.csv",
+    "verify_files": "sample",
+    "verify_sample_size": 2048
+  },
+  "model": {
+    "backbone": "resnet18",
+    "explicit_stop_gradient": true,
+    "final_projection_batch_norm_affine": false,
+    "initialization": "scratch",
+    "method": "simsiam",
+    "prediction_dimension": 2048,
+    "prediction_hidden_dimension": 512,
+    "prediction_layers": 2,
+    "projection_dimension": 2048,
+    "projection_hidden_dimension": 2048,
+    "projection_layers": 3
+  },
+  "monitoring": {
+    "require_finite_gradients": true,
+    "require_finite_loss": true,
+    "track_backbone_feature_norm": true,
+    "track_collapse_level": true,
+    "track_projection_norm": true,
+    "track_projection_standard_deviation": true
+  },
+  "optimization": {
+    "batch_size": 256,
+    "epochs": 30,
+    "evaluation_batch_size": 256,
+    "gradient_clip_norm": 5.0,
+    "learning_rate": 0.05,
+    "minimum_learning_rate": 0.0,
+    "momentum": 0.9,
+    "optimizer": "sgd",
+    "predictor_learning_rate": 0.05,
+    "predictor_learning_rate_mode": "fixed",
+    "warmup_epochs": 3,
+    "weight_decay": 0.0001
+  },
+  "run": {
+    "name": "simsiam_s08_lr0p05_plr0p05_wd0p0001_e30_seed42",
+    "output_root": "${PNP_RUNS_ROOT}/hpc/grid_search/simsiam_screen_v2"
+  },
+  "runtime": {
+    "checkpoint_every": 10,
+    "export_train_embeddings": true,
+    "export_validation_embeddings": true,
+    "num_workers": 8,
+    "seed": 42,
+    "use_amp": false,
+    "validation_every": 1
+  }
+}
