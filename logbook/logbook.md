@@ -204,7 +204,7 @@ complete a full draft of the report to allow feddback from CN, run and analyse t
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Meeting 11 (Tuesday, 25 August 2026)
+Meeting 12 (Tuesday, 25 August 2026)
 
 Location: London (Meeting Online)
 
@@ -212,10 +212,28 @@ Present in Meeting:
 Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
 
 Key points discussed:
---
+Reviewed a near complete version of the project report. Discussed the creation of a second version of the workflow in order to remedy issues with duplicates in the v1 dataset. Aimed to rerun results quickly, if possible on a v2 dataset without duplicates to improve results.
 
 Feedback received:
---
+Positive feedback received on the report and the work produced with some notes for improvement relating to certain aspects of the report.
 
 Work plan before next meeting:
---
+Complete v2 runs and code bundle before deadline, finish the final version of the project report.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Meeting 13 (Tuesday, 7 September 2026)
+
+Location: London (Meeting Online)
+
+Present in Meeting:
+Alexander Stringer (AS, Student), Chetan Nathwani (CN, Primary Internal Supervisor)
+
+Key points discussed:
+Will be discussing presentation prepared for meeting and preparing for the viva.
+
+Feedback received:
+-
+
+Work plan before next meeting:
+Prepare for viva.
